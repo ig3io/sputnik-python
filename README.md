@@ -18,7 +18,7 @@ for track in search:
 >> Wish - Broken
 >> Gave Up - Broken
 >> ...
-```    
+```
 
 License
 -------
