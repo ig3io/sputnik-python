@@ -12,15 +12,9 @@ import sputnik
 
 search = sputnik.search("nine inch nails broken")
 print search.info['num_results']
-```
-```
 >> 119
-```
-```python
 for track in search:
     print track['name'] + ' - ' + track['album']['name']
-```
-```
 >> Wish - Broken
 >> Gave Up - Broken
 >> ...
