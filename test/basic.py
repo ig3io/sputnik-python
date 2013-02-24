@@ -1,20 +1,15 @@
-import sputnik as spk
+import sputnik
 import simplejson as json
-
-search_terms = []
-
-def search(terms):
-    res = spk.search(terms)
-    for track in res:
-        print track
-
-def search2(terms):
-    for result in spk.search(terms):
-        print result
 
 
 def main():
-    search("nine inch nails broken")
+    s = sputnik.search("nine inch nails")
+    print "Number of results: " + str(s.info['num_results'])
+    for track in s:
+        print '- ' + track['name']
+        print '\t ' + track['album']['name']
+        artists = [ar['name'] for ar in track['artists']]
+        print '\t ' + ', '.join(artists)
 
 
 if __name__ == '__main__':
