@@ -43,7 +43,7 @@ def search(terms, method='track'):
         raise NotImplementedException("There was some problem. Exception"
                 "not defined yet")
     else:
-        data = json.loads(r.text)
+        data = r.json()
         if method == 'track':
             return TrackSearch(data)
         elif method == 'album':
