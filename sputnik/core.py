@@ -12,24 +12,25 @@ def getbaseurl(service='search', version='1', method='track',
 class BaseSearch(object):
     def __init__(self, data):
         self.info = data['info']
-        self.elements = None
+        self.results = None
 
     def __iter__(self):
-        for el in self.elements:
+        for el in self.results:
             yield el
 
 
 class TrackSearch(BaseSearch):
     def __init__(self, data):
         super(TrackSearch, self).__init__(data)
-        self.elements = data['tracks']
+        self.results = data['tracks']
+        self.tracks = self.results
 
 
 class AlbumSearch(BaseSearch):
     def __init__(self, data):
         super(AlbumSearch, self).__init__(data)
-        self.elements = data['albums']
-
+        self.results = data['albums']
+        self.albums = results
 
 
 def search(terms, method='track'):
