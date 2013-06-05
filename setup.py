@@ -7,6 +7,6 @@ setup(name='sputnik',
       description='Spotify Search API Wrapper',
       author='Ignacio Contreras Pinilla',
       author_email='ignacio@nachovia.com',
-      url='http://nachovia.com',
+      url='http://github.com/ignaciocontreras/sputnik',
       packages=['sputnik'],
      )
