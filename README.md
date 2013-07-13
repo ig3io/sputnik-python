@@ -14,9 +14,9 @@ end you have to work with JSON objects.
 import sputnik
 
 search = sputnik.search("nine inch nails broken")
-print search.info['num_results']
+print search.['info']['num_results']
 >> 119
-for track in search:
+for track in search['tracks']:
     print track['name'] + ' - ' + track['album']['name']
 >> Wish - Broken
 >> Gave Up - Broken
