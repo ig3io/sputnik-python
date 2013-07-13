@@ -5,6 +5,8 @@ except ImportError:
     import json
 
 
+METHODS = ['track', 'album', 'artist']
+
 def getbaseurl(service='search', version='1', method='track',
                 format='json'):
     """Returns the base URL for a Spotify Web API query"""
