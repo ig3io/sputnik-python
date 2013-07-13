@@ -2,17 +2,17 @@ import unittest
 import requests
 import sputnik
 
+
 class BasicTest(unittest.TestCase):
 
     def setUp(self):
         pass
 
-
     def test_number_of_results(self):
         requests_res = requests.get(
-                'http://ws.spotify.com/search/1'
-                '/track.json?q=nine+inch+nails+broken'
-                ).json()
+            'http://ws.spotify.com/search/1'
+            '/track.json?q=nine+inch+nails+broken'
+        ).json()
         sputnik_res = sputnik.search('nine inch nails broken')
 
         req_num = requests_res['info']['num_results']
