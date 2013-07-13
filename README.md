@@ -20,6 +20,6 @@ for track in search:
 >> ...
 ```
 
-License
--------
-This code is under the MIT License.
+Copyright
+---------
+Released under the terms of the MIT License.
