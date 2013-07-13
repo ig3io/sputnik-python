@@ -9,30 +9,6 @@ def getbaseurl(service='search', version='1', method='track',
     return baseurl.format(service, version, method, format)
 
 
-class BaseSearch(object):
-    def __init__(self, data):
-        self.info = data['info']
-        self.results = None
-
-    def __iter__(self):
-        for el in self.results:
-            yield el
-
-
-class TrackSearch(BaseSearch):
-    def __init__(self, data):
-        super(TrackSearch, self).__init__(data)
-        self.results = data['tracks']
-        self.tracks = self.results
-
-
-class AlbumSearch(BaseSearch):
-    def __init__(self, data):
-        super(AlbumSearch, self).__init__(data)
-        self.results = data['albums']
-        self.albums = results
-
-
 def search(terms, method='track'):
     if hasattr(terms, '__iter__'):
         sterms = ' '.join(terms)
@@ -43,10 +19,5 @@ def search(terms, method='track'):
     if r.status_code != requests.codes.ok:
         raise NotImplementedException("There was some problem. Exception"
                 "not defined yet")
-    else:
-        data = r.json()
-        if method == 'track':
-            return TrackSearch(data)
-        elif method == 'album':
-            return AlbumSearch(data)
-        # There should be a check somewhere for method input!
+    data = r.json()
+    return data
