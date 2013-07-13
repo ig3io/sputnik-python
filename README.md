@@ -2,6 +2,9 @@ Sputnik
 =======
 Spotify Search API wrapper. Under development.
 
+ [![Build Status](https://travis-ci.org/ignaciocontreras/sputnik.png)](https://travis-ci.org/ignaciocontreras/sputnik)
+
+
 How it works
 ------------
 Right now it only abstracts the connection and a few more things, but in the
