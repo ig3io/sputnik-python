@@ -1,5 +1,8 @@
 import requests
-import simplejson as json
+try:
+    import simplejson as json
+except ImportError:
+    import json
 
 
 def getbaseurl(service='search', version='1', method='track',
